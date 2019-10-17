@@ -45,6 +45,7 @@ public class EditProfileActivity extends AppCompatActivity {
     TextView save,tv_change;
     MaterialEditText fullname,username,bio;
     FirebaseUser firebaseUser;
+    DatabaseReference database;
 
     private Uri mImageUri;
     private StorageTask uploadTask;
