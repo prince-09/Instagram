@@ -44,6 +44,10 @@ public class RegisterActivity extends AppCompatActivity {
         txt_login=(TextView)findViewById(R.id.txt_login);
         auth=FirebaseAuth.getInstance();
         txt_login.setOnClickListener(new View.OnClickListener() {
+            if(password.length<8){
+            alert("password should be at least of length 8");
+        }
+        else{
             @Override
             public void onClick(View v) {
                 startActivity(new Intent(RegisterActivity.this,LoginActivity.class));
@@ -62,6 +66,7 @@ public class RegisterActivity extends AppCompatActivity {
                 register(str_username,str_fullname,str_email,str_password);
             }
         });
+        }
     }
     private void register(final String username,final String fullname,String email,String password){
         auth.createUserWithEmailAndPassword(email,password)
